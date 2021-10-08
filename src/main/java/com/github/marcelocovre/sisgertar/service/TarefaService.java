@@ -1,17 +1,10 @@
 package com.github.marcelocovre.sisgertar.service;
 
 import com.github.marcelocovre.sisgertar.domain.Tarefa;
-<<<<<<< HEAD
 import com.github.marcelocovre.sisgertar.domain.Usuario;
 import com.github.marcelocovre.sisgertar.domain.enumerations.StatusTarefaEnum;
 import com.github.marcelocovre.sisgertar.repository.TarefaRepository;
 import com.github.marcelocovre.sisgertar.service.dto.*;
-=======
-import com.github.marcelocovre.sisgertar.domain.enumerations.StatusTarefaEnum;
-import com.github.marcelocovre.sisgertar.repository.TarefaRepository;
-import com.github.marcelocovre.sisgertar.service.dto.TarefaDTO;
-import com.github.marcelocovre.sisgertar.service.dto.TarefaListDTO;
->>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
 import com.github.marcelocovre.sisgertar.service.error.TarefaNaoEncontradaException;
 import com.github.marcelocovre.sisgertar.service.error.UsuarioNaoAutorizadoException;
 import com.github.marcelocovre.sisgertar.service.mapper.TarefaMapper;
@@ -75,28 +68,19 @@ public class TarefaService {
         Tarefa tarefaEmBanco = tarefaRepository.findById(tarefaDTO.getId())
                 .orElseThrow(TarefaNaoEncontradaException::new);
         validarResponsavel(tarefaEmBanco, hash);
-<<<<<<< HEAD
         atualizarStatus(tarefaEmBanco, tarefaDTO);
         notificarAcompanhadores(tarefaEmBanco);
-=======
-        tarefaEmBanco.setIdStatus(tarefaDTO.getIdStatus());
->>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
         tarefaRepository.save(tarefaEmBanco);
         return tarefaMapper.toDTO(tarefaEmBanco);
     }
 
     private void validarResponsavel(Tarefa tarefa, String hash) {
-<<<<<<< HEAD
         UsuarioDTO responsavel = usuarioService.obterPorId(tarefa.getResponsavel().getId());
         if (!responsavel.getHash().equals(hash)) {
-=======
-        if (!tarefa.getResponsavel().getHash().equals(hash)){
->>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
             throw new UsuarioNaoAutorizadoException();
         }
     }
 
-<<<<<<< HEAD
     private void atualizarStatus(Tarefa tarefa, TarefaDTO tarefaDTO) {
         tarefa.setIdStatus(tarefaDTO.getIdStatus());
     }
@@ -115,6 +99,4 @@ public class TarefaService {
         emailDTO.setDestinatario(acompanhador.getEmail());
         return emailDTO;
     }
-=======
->>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
 }

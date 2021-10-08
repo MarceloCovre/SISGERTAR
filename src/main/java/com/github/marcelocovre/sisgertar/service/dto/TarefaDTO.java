@@ -16,8 +16,4 @@ public class TarefaDTO {
     private Long idResponsavel;
     private Long idStatus;
     private List<UsuarioDTO> acompanhadores = new ArrayList<>();
-<<<<<<< HEAD
-=======
-
->>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
 }
