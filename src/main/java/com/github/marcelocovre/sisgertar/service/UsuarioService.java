@@ -4,7 +4,10 @@ import com.github.marcelocovre.sisgertar.domain.Usuario;
 import com.github.marcelocovre.sisgertar.repository.UsuarioRepository;
 import com.github.marcelocovre.sisgertar.service.dto.UsuarioDTO;
 import com.github.marcelocovre.sisgertar.service.dto.UsuarioListDTO;
+<<<<<<< HEAD
 import com.github.marcelocovre.sisgertar.service.error.UsuarioNaoEncontradoException;
+=======
+>>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
 import com.github.marcelocovre.sisgertar.service.mapper.UsuarioMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,11 +24,19 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
     private final UsuarioMapper usuarioMapper;
 
+<<<<<<< HEAD
 //    public List<UsuarioListDTO> findAll() {
 //        return usuarioRepository.findAll().stream()
 //                .map(usuarioMapper::toListDTO)
 //                .collect(Collectors.toList());
 //    }
+=======
+    public List<UsuarioListDTO> findAll() {
+        return usuarioRepository.findAll().stream()
+                .map(usuarioMapper::toListDTO)
+                .collect(Collectors.toList());
+    }
+>>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
 
     public UsuarioDTO save(UsuarioDTO usuarioDTO) {
         Usuario usuario = usuarioMapper.toEntity(usuarioDTO);
@@ -34,6 +45,7 @@ public class UsuarioService {
         return usuarioMapper.toDTO(usuario);
     }
 
+<<<<<<< HEAD
     public UsuarioDTO obterPorId(Long idUsuario) {
         Usuario usuario = usuarioRepository.findById(idUsuario)
                 .orElseThrow(UsuarioNaoEncontradoException::new);
@@ -47,4 +59,13 @@ public class UsuarioService {
 //    public void deleteById(Long id) {
 //        usuarioRepository.deleteById(id);
 //    }
+=======
+    public Optional<UsuarioDTO> findById(Long id) {
+        return usuarioRepository.findById(id).map(usuarioMapper::toDTO);
+    }
+
+    public void deleteById(Long id) {
+        usuarioRepository.deleteById(id);
+    }
+>>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
 }

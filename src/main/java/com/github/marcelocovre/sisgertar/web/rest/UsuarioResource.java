@@ -3,7 +3,10 @@ package com.github.marcelocovre.sisgertar.web.rest;
 import com.github.marcelocovre.sisgertar.service.UsuarioService;
 import com.github.marcelocovre.sisgertar.service.dto.UsuarioDTO;
 import com.github.marcelocovre.sisgertar.service.dto.UsuarioListDTO;
+<<<<<<< HEAD
 import liquibase.pro.packaged.S;
+=======
+>>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,11 +25,14 @@ public class UsuarioResource {
         return ResponseEntity.ok(usuarioService.save(usuarioDTO));
     }
 
+<<<<<<< HEAD
     @GetMapping("/obter-por-hash/{hash}")
     public ResponseEntity<UsuarioDTO> obterPorHash(@PathVariable("hash") String hash){
         return ResponseEntity.of(usuarioService.obterPorHash(hash));
     }
 
+=======
+>>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
 //    @GetMapping
 //    public ResponseEntity<List<UsuarioListDTO>> findAll() {
 //        return ResponseEntity.ok(usuarioService.findAll());

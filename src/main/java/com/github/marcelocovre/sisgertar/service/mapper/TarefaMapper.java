@@ -1,6 +1,7 @@
 package com.github.marcelocovre.sisgertar.service.mapper;
 
 import com.github.marcelocovre.sisgertar.domain.Tarefa;
+<<<<<<< HEAD
 import com.github.marcelocovre.sisgertar.domain.Usuario;
 import com.github.marcelocovre.sisgertar.service.dto.TarefaDTO;
 import com.github.marcelocovre.sisgertar.service.dto.TarefaListDTO;
@@ -11,6 +12,12 @@ import org.mapstruct.MappingTarget;
 
 import java.util.Objects;
 import java.util.Optional;
+=======
+import com.github.marcelocovre.sisgertar.service.dto.TarefaDTO;
+import com.github.marcelocovre.sisgertar.service.dto.TarefaListDTO;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+>>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
 
 
 @Mapper(uses = { UsuarioMapper.class })
@@ -26,6 +33,7 @@ public interface TarefaMapper extends EntityMapper<Tarefa, TarefaDTO>{
 
     TarefaListDTO toListDTO(Tarefa tarefa);
 
+<<<<<<< HEAD
     @AfterMapping
     default void verificarElementosNulos(@MappingTarget Tarefa tarefa) {
         tarefa.setResponsavel(
@@ -34,4 +42,6 @@ public interface TarefaMapper extends EntityMapper<Tarefa, TarefaDTO>{
             tarefa.setResponsavel(null);
         }
     }
+=======
+>>>>>>> 9cbbe6330b1691043cd6e6981c8b30396616780e
 }
