@@ -4,9 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(
-        value = HttpStatus.NOT_FOUND,
-        reason = "A tarefa procurada não existe."
-)
-public class TarefaNaoEncontradaException extends RuntimeException {
-
+        value = HttpStatus.BAD_REQUEST,
+        reason = "O status não existe.")
+public class StatusInexistenteException extends RuntimeException{
 }

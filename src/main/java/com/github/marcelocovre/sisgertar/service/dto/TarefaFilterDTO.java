@@ -1,12 +1,13 @@
 package com.github.marcelocovre.sisgertar.service.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class UsuarioListDTO {
+@AllArgsConstructor
+public class TarefaFilterDTO {
 
-    private Long id;
     private String nome;
 }
